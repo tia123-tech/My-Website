@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demi-God Quiz</title>
+    <style>
+        body {
+            background: #f0f8ff;
+            font-family: 'Papyrus', cursive;
+            text-align: center;
+            padding: 30px;
+            color: #2f4f4f;
+        }
+
+        h1 {
+            color: #4682b4;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #a9a9a9;
+            display: inline-block;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #add8e6;
+            margin-top: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #87ceeb;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #6a5acd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home.html">Home</a>
+        <a href="#Annabeth.html">Annabeth</a>
+        <a href="calypso.html">calypso</a>
+        <a href="frank.html">frank</a>
+        <a href="Hazel.html">Hazel</a>
+        <a href="Jason.html">Jason</a>
+        <a href="Leo.html">Leo</a>
+        <a href="Nico.html">Nico</a>
+        <a href="Percy.html">Percy</a>
+        <a href="Piper.html">Piper</a>
+        <a href="q&a.html">q&a</a>
+        <a href="quiz.html">quiz</a>
+        <a href="Reyna.html">Reyna</a>
+        <a href="Thank you.html">Thank you</a>
+    </div>
+    <h1>🌊 Who's Your Godly Parent? ⚡</h1>
+    <p>Answer these questions to find out which Olympian you're descended from!</p>
+
+    <form id="quiz-form">
+        <label for="element">What's your favorite element?</label>
+        <select id="element">
+            <option>Water</option>
+            <option>Fire</option>
+            <option>Air</option>
+            <option>Earth</option>
+            <option>Darkness</option>
+            <option>Light</option>
+        </select>
+
+        <label for="weapon">Pick a weapon:</label>
+        <select id="weapon">
+            <option>Sword</option>
+            <option>Bow & Arrow</option>
+            <option>Magic Staff</option>
+            <option>Dagger</option>
+            <option>Trident</option>
+        </select>
+
+        <label for="place">Where would you rather be?</label>
+        <select id="place">
+            <option>Ocean</option>
+            <option>Forest</option>
+            <option>Sky</option>
+            <option>Library</option>
+            <option>Volcano</option>
+        </select>
+
+        <button type="button" onclick="getResult()">Reveal My Godly Parent</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function getResult() {
+            const element = document.getElementById("element").value;
+            const weapon = document.getElementById("weapon").value;
+            const place = document.getElementById("place").value;
+            let result = "";
+
+            if (element === "Water" || weapon === "Trident" || place === "Ocean") {
+                result = "Poseidon 🌊 — God of the Sea";
+            } else if (element === "Fire" || place === "Volcano") {
+                result = "Hephaestus 🔥 — God of Fire and Forge";
+            } else if (element === "Air" || place === "Sky") {
+                result = "Zeus ⚡ — God of the Sky";
+            } else if (weapon === "Bow & Arrow" || place === "Forest") {
+                result = "Artemis 🌙 — Goddess of the Hunt";
+            } else if (element === "Darkness") {
+                result = "Hades 💀 — God of the Underworld";
+            } else if (element === "Light" || place === "Library") {
+                result = "Athena 🧠 — Goddess of Wisdom";
+            } else {
+                result = "Hermes 👟 — God of Travel and Mischief";
+            }
+
+            document.getElementById("result").innerText = `You are a child of ${result}! 🏛️✨`;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Heroes of Olympus Quiz</title>
+    <style>
+        body {
+            background: #acd1ed;
+            font-family: 'Papyrus', cursive;
+            padding: 30px;
+            color: #779ef3;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a148c;
+            margin-bottom: 20px;
+        
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #7e57c2;
+            color: rgb(233, 196, 221);
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #6a1b9a;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home.html">Home</a>
+        <a href="#Annabeth.html">Annabeth</a>
+        <a href="calypso.html">calypso</a>
+        <a href="frank.html">frank</a>
+        <a href="Hazel.html">Hazel</a>
+        <a href="Jason.html">Jason</a>
+        <a href="Leo.html">Leo</a>
+        <a href="Nico.html">Nico</a>
+        <a href="Percy.html">Percy</a>
+        <a href="Piper.html">Piper</a>
+        <a href="q&a.html">q&a</a>
+        <a href="quiz.html">quiz</a>
+        <a href="Reyna.html">Reyna</a>
+        <a href="Thank you.html">Thank you</a>
+    </div>
+    <h1>Heroes of Olympus Quiz</h1>
+
+    <div class="quiz-container">
+        <div class="question">
+            <p>1. Who can control gems and came back from the Underworld?</p>
+            <input type="text" id="q1">
+        </div>
+
+        <div class="question">
+            <p>2. Who is the chaotic mechanic son of Hephaestus?</p>
+            <input type="text" id="q2">
+        </div>
+
+        <div class="question">
+            <p>3. Who leads New Rome with wolves and grace?</p>
+            <input type="text" id="q3">
+        </div>
+
+        <div class="question">
+            <p>4. Who commands lightning and is known for loyalty?</p>
+            <input type="text" id="q4">
+        </div>
+
+        <div class="question">
+            <p>5. Who is the architect daughter of Athena?</p>
+            <input type="text" id="q5">
+        </div>
+
+        <div class="question">
+            <p>6. Who is the shadow-traveling son of Hades?</p>
+            <input type="text" id="q6">
+        </div>
+
+        <div class="question">
+            <p>7. Who is the charmspeaking daughter of Aphrodite?</p>
+            <input type="text" id="q7">
+        </div>
+
+        <div class="question">
+            <p>8. Who is the shapeshifting son of Mars?</p>
+            <input type="text" id="q8">
+        </div>
+
+        <div class="question">
+            <p>9. Who is the main hero and son of Poseidon?</p>
+            <input type="text" id="q9">
+        </div>
+
+        <button onclick="checkAnswers()">Check My Answers</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = [
+                "Hazel",
+                "Leo",
+                "Reyna",
+                "Jason",
+                "Annabeth",
+                "Nico",
+                "Piper",
+                "Frank",
+                "Percy"
+            ];
+
+            let correct = 0;
+
+            for (let i = 0; i < answers.length; i++) {
+                const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase();
+                if (userAnswer === answers[i].toLowerCase()) {
+                    correct++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerText = `You got ${correct} out of ${answers.length} correct!`;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
