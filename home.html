@@ -72,8 +72,8 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="#home.html">Home</a>
-        <a href="#Annabeth.html">Annabeth</a>
+        <a class="active" href="home.html">Home</a>
+        <a href="Annabeth.html">Annabeth</a>
         <a href="calypso.html">calypso</a>
         <a href="frank.html">frank</a>
         <a href="Hazel.html">Hazel</a>
@@ -87,7 +87,12 @@
         <a href="Reyna.html">Reyna</a>
         <a href="Thank you.html">Thank you</a>
     </div>
+    <section>
+        <img class="mySlides" src="slider.jpg" style="height: 200px;">
+        <img class="mySlides" src="slider.jpg" style="height: 200px;">
+        <img class="mySlides" src="slider.jpg" style="height: 200px;">
 
+    </section>
     <h1>Camp Awaits...</h1>
     <p>
         You’ve been called. Your journey begins now.
@@ -113,6 +118,21 @@
     <div class="footer">
         No spoilers. Just fate.C'mon, you gotta join 'em 🌀
     </div>
+    <script>
+        var myIndex = 0;
+        Carousel();
+        function Carousel(){
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for(i=0;i<x.length;i++){
+                x[i].style.display="none";
+            }
+            myIndex++;
+            if(myIndex>x.length){myIndex=1}
+            x[myIndex-1].style.display="block";
+            setTimeout(Carousel,3000);
+        }
+    </script>
 
 </body>
 
